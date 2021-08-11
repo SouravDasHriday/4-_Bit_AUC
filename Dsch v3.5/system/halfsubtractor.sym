@@ -1,0 +1,64 @@
+USER SYMBOL by DSCH 3.5
+DATE 8/10/2020 12:51:01 PM
+SYM  #Half subtractor
+BB(0,0,40,30)
+TITLE 10 -7  #Half subtractor
+MODEL 6000
+REC(5,5,30,20)
+PIN(0,20,0.00,0.00)B
+PIN(0,10,0.00,0.00)A
+PIN(40,20,2.00,1.00)Borrow
+PIN(40,10,2.00,1.00)Difference
+LIG(0,20,5,20)
+LIG(0,10,5,10)
+LIG(35,20,40,20)
+LIG(35,10,40,10)
+LIG(5,5,5,25)
+LIG(5,5,35,5)
+LIG(35,5,35,25)
+LIG(35,25,5,25)
+VLG module sym15( B,A,Borrow,Difference);
+VLG  input B,A;
+VLG  output Borrow,Difference;
+VLG  wire w5,w7,w8,w9,w10,w11,w12,w13;
+VLG  wire w14,w15,w16,w17,w18;
+VLG  xor #(4) XOR_1(Difference,B,A);
+VLG  not #(4) not_2(w5,A);
+VLG  and #(3) and2_3(Borrow,w5,B);
+VLG  and #(4) and2_1_4(w8,w7,B);
+VLG  and #(4) and2_2_5(w10,A,w9);
+VLG  not #(4) not_3_6(w7,A);
+VLG  not #(4) not_4_7(w9,B);
+VLG  or #(3) or2_5_8(Difference,w8,w10);
+VLG  nmos #(1) nmos_1_6_9(w11,vss,w7); //  
+VLG  nmos #(3) nmos_2_7_10(w12,w11,B); //  
+VLG  pmos #(3) pmos_3_8_11(w12,vdd,B); //  
+VLG  pmos #(3) pmos_4_9_12(w12,vdd,w7); //  
+VLG  pmos #(3) pmos_5_10_13(w8,vdd,w12); //  
+VLG  nmos #(3) nmos_6_11_14(w8,vss,w12); //  
+VLG  nmos #(1) nmos_1_12_15(w13,vss,A); //  
+VLG  nmos #(3) nmos_2_13_16(w14,w13,w9); //  
+VLG  pmos #(3) pmos_3_14_17(w14,vdd,w9); //  
+VLG  pmos #(3) pmos_4_15_18(w14,vdd,A); //  
+VLG  pmos #(3) pmos_5_16_19(w10,vdd,w14); //  
+VLG  nmos #(3) nmos_6_17_20(w10,vss,w14); //  
+VLG  pmos #(3) pmos_1_18_21(w7,vdd,A); //  
+VLG  nmos #(3) nmos_2_19_22(w7,vss,A); //  
+VLG  pmos #(3) pmos_1_20_23(w9,vdd,B); //  
+VLG  nmos #(3) nmos_2_21_24(w9,vss,B); //  
+VLG  nmos #(3) nmos_1_22_25(w15,vss,w10); //  
+VLG  nmos #(3) nmos_2_23_26(w15,vss,w8); //  
+VLG  pmos #(3) pmos_3_24_27(w15,w16,w10); //  
+VLG  pmos #(1) pmos_4_25_28(w16,vdd,w8); //  
+VLG  nmos #(2) nmos_5_26_29(Difference,vss,w15); //  
+VLG  pmos #(2) pmos_6_27_30(Difference,vdd,w15); //  
+VLG  pmos #(2) pmos_1_31(w5,vdd,A); //  
+VLG  nmos #(2) nmos_2_32(w5,vss,A); //  
+VLG  nmos #(1) nmos_1_33(w17,vss,w5); //  
+VLG  nmos #(3) nmos_2_34(w18,w17,B); //  
+VLG  pmos #(3) pmos_3_35(w18,vdd,B); //  
+VLG  pmos #(3) pmos_4_36(w18,vdd,w5); //  
+VLG  pmos #(2) pmos_5_37(Borrow,vdd,w18); //  
+VLG  nmos #(2) nmos_6_38(Borrow,vss,w18); //  
+VLG endmodule
+FSYM

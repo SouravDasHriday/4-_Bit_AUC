@@ -1,0 +1,23 @@
+USER SYMBOL by DSCH 3.5
+DATE 7/25/2020 9:58:18 PM
+SYM  #not
+BB(0,0,40,20)
+TITLE 10 -7  #not
+MODEL 6000
+REC(5,5,30,10)
+PIN(0,10,0.00,0.00)A
+PIN(40,10,2.00,1.00)Output
+LIG(0,10,5,10)
+LIG(35,10,40,10)
+LIG(5,5,5,15)
+LIG(5,5,35,5)
+LIG(35,5,35,15)
+LIG(35,15,5,15)
+VLG module not( A,Output);
+VLG  input A;
+VLG  output Output;
+VLG  wire ;
+VLG  pmos #(2) pmos_1(Output,vdd,A); // 0.5u 0.07u
+VLG  nmos #(2) nmos_2(Output,vss,A); // 0.3u 0.07u
+VLG endmodule
+FSYM

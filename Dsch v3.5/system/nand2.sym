@@ -1,0 +1,27 @@
+USER SYMBOL by DSCH 3.5
+DATE 7/25/2020 9:52:48 PM
+SYM  #nand2
+BB(0,0,40,30)
+TITLE 10 -7  #nand2
+MODEL 6000
+REC(5,5,30,20)
+PIN(0,20,0.00,0.00)B
+PIN(0,10,0.00,0.00)A
+PIN(40,10,2.00,1.00)Output
+LIG(0,20,5,20)
+LIG(0,10,5,10)
+LIG(35,10,40,10)
+LIG(5,5,5,25)
+LIG(5,5,35,5)
+LIG(35,5,35,25)
+LIG(35,25,5,25)
+VLG module nand2( B,A,Output);
+VLG  input B,A;
+VLG  output Output;
+VLG  wire w5;
+VLG  pmos #(2) pmos_1(Output,vdd,A); // 0.5u 0.07u
+VLG  pmos #(2) pmos_2(Output,vdd,B); // 0.5u 0.07u
+VLG  nmos #(2) nmos_3(Output,w5,B); // 0.3u 0.07u
+VLG  nmos #(1) nmos_4(w5,vss,A); // 0.3u 0.07u
+VLG endmodule
+FSYM

@@ -1,0 +1,47 @@
+VERSION 10-Feb-18 12:13:41 PM
+FIG #E:\Simulation Software\Microwind v3.5\Examples\inverter\VLSI Lab 3.MSK
+BB(1,-2,28,51)
+SIMU #1.00
+ZOOM(-19,-7,33,56)
+REC(1,27,25,24,NW)
+REC(13,34,3,8,DP)
+REC(13,30,5,4,DP)
+REC(8,30,3,8,DP)
+REC(6,38,5,4,DP)
+REC(5,-2,4,4,DP)
+REC(13,14,5,4,DN)
+REC(6,14,5,4,DN)
+REC(5,46,4,4,DN)
+REC(15,31,2,2,CO)
+REC(15,15,2,2,CO)
+REC(7,39,2,2,CO)
+REC(6,47,2,2,CO)
+REC(6,-1,2,2,CO)
+REC(7,15,2,2,CO)
+REC(11,27,2,18,PO)
+REC(10,21,3,6,PO)
+REC(11,11,2,10,PO)
+REC(14,14,4,20,ME)
+REC(18,22,2,4,ME)
+REC(4,-2,24,4,ME)
+REC(4,46,24,4,ME)
+REC(6,38,4,8,ME)
+REC(6,2,4,16,ME)
+REC(9,-1,2,2,VI)
+REC(9,47,2,2,VI)
+REC(8,46,4,4,M2)
+REC(8,-2,4,4,M2)
+REC(9,47,2,2,V2)
+REC(9,-1,2,2,V2)
+REC(4,-2,24,5,M3)
+REC(11,30,2,12,DP)
+REC(11,14,2,4,DN)
+TITLE 9 0  #vss
+$0 1000 0 
+TITLE 15 48  #vdd
+$1 1000 0 
+TITLE 18 24  #output
+$v 1000 0 
+TITLE 11 24  #clock
+$c 1000 0 0.1900 0.2000 0.3900 0.4000 
+FFIG E:\Simulation Software\Microwind v3.5\Examples\inverter\VLSI Lab 3.MSK

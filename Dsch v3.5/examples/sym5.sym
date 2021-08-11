@@ -1,0 +1,23 @@
+USER SYMBOL by DSCH 3.5
+DATE 7/15/2020 1:50:45 PM
+SYM  #sym5
+BB(0,0,40,20)
+TITLE 10 -7  #Inverter
+MODEL 6000
+REC(5,5,30,10)
+PIN(0,10,0.00,0.00)Input
+PIN(40,10,2.00,1.00)Output
+LIG(0,10,5,10)
+LIG(35,10,40,10)
+LIG(5,5,5,15)
+LIG(5,5,35,5)
+LIG(35,5,35,15)
+LIG(35,15,5,15)
+VLG module sym5( Input,Output);
+VLG  input Input;
+VLG  output Output;
+VLG  wire ;
+VLG  nmos #(1) nmos_1(Output,vss,Input); // 0.3u 0.07u
+VLG  pmos #(1) pmos_2(Output,vdd,Input); // 0.5u 0.07u
+VLG endmodule
+FSYM

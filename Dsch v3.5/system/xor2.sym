@@ -1,0 +1,51 @@
+USER SYMBOL by DSCH 3.5
+DATE 8/6/2020 9:42:05 AM
+SYM  #XOR
+BB(0,0,40,30)
+TITLE 10 -7  #XOR
+MODEL 6000
+REC(5,5,30,20)
+PIN(0,20,0.00,0.00)B
+PIN(0,10,0.00,0.00)A
+PIN(40,10,2.00,1.00)Output
+LIG(0,20,5,20)
+LIG(0,10,5,10)
+LIG(35,10,40,10)
+LIG(5,5,5,25)
+LIG(5,5,35,5)
+LIG(35,5,35,25)
+LIG(35,25,5,25)
+VLG module XOR( B,A,Output);
+VLG  input B,A;
+VLG  output Output;
+VLG  wire w3,w4,w6,w7,w9,w10,w11,w12;
+VLG  wire w13,w14;
+VLG  and #(4) and2_1(w4,w3,B);
+VLG  and #(4) and2_2(w7,A,w6);
+VLG  not #(4) not_3(w3,A);
+VLG  not #(4) not_4(w6,B);
+VLG  or #(3) or2_5(Output,w4,w7);
+VLG  nmos #(1) nmos_1_6(w9,vss,w3); //  
+VLG  nmos #(3) nmos_2_7(w10,w9,B); //  
+VLG  pmos #(3) pmos_3_8(w10,vdd,B); //  
+VLG  pmos #(3) pmos_4_9(w10,vdd,w3); //  
+VLG  pmos #(2) pmos_5_10(w4,vdd,w10); //  
+VLG  nmos #(2) nmos_6_11(w4,vss,w10); //  
+VLG  nmos #(1) nmos_1_12(w11,vss,A); //  
+VLG  nmos #(3) nmos_2_13(w12,w11,w6); //  
+VLG  pmos #(3) pmos_3_14(w12,vdd,w6); //  
+VLG  pmos #(3) pmos_4_15(w12,vdd,A); //  
+VLG  pmos #(2) pmos_5_16(w7,vdd,w12); //  
+VLG  nmos #(2) nmos_6_17(w7,vss,w12); //  
+VLG  pmos #(2) pmos_1_18(w3,vdd,A); //  
+VLG  nmos #(2) nmos_2_19(w3,vss,A); //  
+VLG  pmos #(2) pmos_1_20(w6,vdd,B); //  
+VLG  nmos #(2) nmos_2_21(w6,vss,B); //  
+VLG  nmos #(3) nmos_1_22(w13,vss,w7); //  
+VLG  nmos #(3) nmos_2_23(w13,vss,w4); //  
+VLG  pmos #(3) pmos_3_24(w13,w14,w7); //  
+VLG  pmos #(1) pmos_4_25(w14,vdd,w4); //  
+VLG  nmos #(2) nmos_5_26(Output,vss,w13); //  
+VLG  pmos #(2) pmos_6_27(Output,vdd,w13); //  
+VLG endmodule
+FSYM
